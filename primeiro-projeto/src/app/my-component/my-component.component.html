@@ -1,0 +1,3 @@
+<p>my-component works!</p>
+<li *ngFor="let product of productList$ | async"> {{product.id}}</li>
+<app-second my-prop="ola" (newItemEvent)="handleEvent($event)"></app-second>
