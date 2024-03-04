@@ -16,6 +16,9 @@
         btn-text="se inscreva" 
         variant="secondary" 
         (submit)="onSubmit()"
-        [disabled]="!newsletterForm.valid"></btn-primary>
+        [disabled]="!newsletterForm.valid"    
+        [loading]="loading()"
+        >
+    </btn-primary>
     </form>
 </section>
