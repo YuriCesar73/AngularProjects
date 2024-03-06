@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FoodModel } from '../interfaces/FoodResponse';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,16 @@ export class FoodService {
 
 
   getData(): FoodModel[] {
+    console.log("Cheguei no getData")
+    console.log(this.foods.length);
     return this.foods;
+
+  }
+
+  addFood(food: FoodModel){
+    console.log("Cheguei aqui no addFood do service");
+    this.foods.push(food);
+
+    console.log(this.foods);
   }
 }
