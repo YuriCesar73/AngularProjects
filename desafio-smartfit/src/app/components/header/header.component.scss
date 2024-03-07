@@ -24,6 +24,8 @@ header .text-container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 header .text-container h1 {
@@ -35,3 +37,19 @@ header .text-container p {
     color: var(--light-grey);
 }
 
+header .text-container .heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+
+    gap: 14px;
+}
+
+header .text-container .heading .heading-border{
+    height: 12px;
+    width: 20%;
+    background-color: var(--dark-grey);
+}
