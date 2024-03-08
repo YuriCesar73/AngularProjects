@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { GetUnitsService } from '../../services/get-units.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Location } from '../../types/location.interface';
 
 @Component({
   selector: 'app-forms',
@@ -13,27 +14,32 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class FormsComponent implements OnInit{
 
-  //OBS: VERIFICAR O BINDING DO FORM GROUP NO HTML DO COMPONENTE
-
-  results = [];
+  results: Location[] = [];
+  filteredResults: Location[] = [];
   formGroup!: FormGroup;
 
   constructor(private unitService: GetUnitsService) { }
 
 
   ngOnInit(): void {
-    this.unitService.getAllUnits().subscribe(data => console.log(data));
     this.formGroup = new FormGroup({
       hour: new FormControl(''),
-      showClosed: new FormControl(false)
+      showClosed: new FormControl(true)
     })
+
+    this.unitService.getAllUnits().subscribe(data => {
+      this.results = data.locations;
+      this.filteredResults = data.locations;
+    });
   }
 
   onSubmit(){
-    console.log("Submit")
-    console.log(this.formGroup.value.hour)
-    console.log(this.formGroup.value.showClosed)
-    console.log(this.formGroup.value)
+    if(!this.formGroup.value.showClosed){
+      this.filteredResults = this.results.filter(location => location.opened === true)
+    } else {
+      this.filteredResults = this.results;
+    }
+    
   }
 
   onClean(){
