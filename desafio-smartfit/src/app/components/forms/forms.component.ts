@@ -3,12 +3,17 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angul
 import { GetUnitsService } from '../../services/get-units.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Location } from '../../types/location.interface';
+import { FilterUnitsService } from '../../services/filter-units.service';
+
+
+
+
 
 @Component({
   selector: 'app-forms',
   standalone: true,
   imports: [ReactiveFormsModule, HttpClientModule],
-  providers: [GetUnitsService],
+  providers: [GetUnitsService, FilterUnitsService],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss'
 })
@@ -18,7 +23,7 @@ export class FormsComponent implements OnInit{
   filteredResults: Location[] = [];
   formGroup!: FormGroup;
 
-  constructor(private unitService: GetUnitsService) { }
+  constructor(private unitService: GetUnitsService, private filterUnitsService: FilterUnitsService) { }
 
 
   ngOnInit(): void {
@@ -33,12 +38,13 @@ export class FormsComponent implements OnInit{
     });
   }
 
+ 
+
+ 
+
   onSubmit(){
-    if(!this.formGroup.value.showClosed){
-      this.filteredResults = this.results.filter(location => location.opened === true)
-    } else {
-      this.filteredResults = this.results;
-    }
+    let {showClosed, hour} = this.formGroup.value;
+    this.filteredResults = this.filterUnitsService.filter(this.results, showClosed, hour)
     
   }
 
