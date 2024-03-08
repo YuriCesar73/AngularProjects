@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   providers: [],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss'
@@ -16,22 +16,26 @@ export class FormsComponent implements OnInit{
   results = [];
   formGroup!: FormGroup;
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor() { }
 
 
   ngOnInit(): void {
-    this.formGroup = this.formbuilder.group({
-      hour: '',
-      showClosed: false
+    this.formGroup = new FormGroup({
+      hour: new FormControl(''),
+      showClosed: new FormControl(false)
     })
   }
 
   onSubmit(){
     console.log("Submit")
+    console.log(this.formGroup.value.hour)
+    console.log(this.formGroup.value.showClosed)
+    console.log(this.formGroup.value)
   }
 
   onClean(){
     console.log("clean")
+    this.formGroup.reset();
   }
 
 }
