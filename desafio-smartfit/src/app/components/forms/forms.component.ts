@@ -5,10 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { Location } from '../../types/location.interface';
 import { FilterUnitsService } from '../../services/filter-units.service';
 
-
-
-
-
 @Component({
   selector: 'app-forms',
   standalone: true,
@@ -33,19 +29,15 @@ export class FormsComponent implements OnInit{
     })
 
     this.unitService.getAllUnits().subscribe(data => {
-      this.results = data.locations;
-      this.filteredResults = data.locations;
+      this.results = data;
+      this.filteredResults = data;
     });
   }
-
- 
-
- 
 
   onSubmit(){
     let {showClosed, hour} = this.formGroup.value;
     this.filteredResults = this.filterUnitsService.filter(this.results, showClosed, hour)
-    
+    this.unitService.setFilteredUnits(this.filteredResults);
   }
 
   onClean(){
