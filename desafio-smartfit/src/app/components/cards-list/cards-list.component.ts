@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GetUnitsService } from '../../services/get-units.service';
 import { Location } from '../../types/location.interface';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-cards-list',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   providers:[GetUnitsService],
   templateUrl: './cards-list.component.html',
   styleUrl: './cards-list.component.scss'
