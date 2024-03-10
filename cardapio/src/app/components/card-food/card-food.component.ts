@@ -18,8 +18,10 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class CardFoodComponent implements OnInit{
 
-  foods: Observable<FoodModel[]> = new Observable<FoodModel[]>();
+  // foods: Observable<FoodModel[]> = new Observable<FoodModel[]>();
 
+  foods: FoodModel[] = []
+  
   constructor(private service: FoodService){
 
     console.log("Cheguei no construtor")
