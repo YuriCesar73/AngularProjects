@@ -1,27 +1,17 @@
-# DesafioSmartfit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+# Desafio SmartFit
 
-## Development server
+Projeto feito com base no desafio da SmartFit, durante o período da pandemia, para avaliar candidatos para uma vaga de front-end. Consiste em uma página de acordo com as especificidades e recursos disponiblizados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Feito a partir do vídeo no canal da [Fernanda Kipper](https://www.youtube.com/@kipperdev).
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Referência
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ - [Video da Fernanda Kipper](https://www.youtube.com/watch?v=ozZXMkp8MnQ)
+ - [Desafio proposto pela SmartFit](https://github.com/bioritmo/front-end-code-challenge-smartsite)
+ 
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
