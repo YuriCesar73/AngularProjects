@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { Location } from './types/location.interface';
 import { GetUnitsService } from './services/get-units.service';
 import { LegendComponent } from './components/legend/legend.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FormsComponent, CardsListComponent, CommonModule, LegendComponent],
+  imports: [RouterOutlet, HeaderComponent, FormsComponent, CardsListComponent, CommonModule, LegendComponent, FooterComponent],
   providers: [GetUnitsService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
