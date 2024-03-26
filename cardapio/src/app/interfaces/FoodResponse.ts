@@ -1,6 +1,5 @@
-export interface FoodModel {
-    title: string;
-    subtitle: string;
-    content: string;
-    urlImage: string;
+export interface Food {
+    id: number,
+    name: string,
+    image: string
 }

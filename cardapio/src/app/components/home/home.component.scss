@@ -1,7 +1,41 @@
-.home-main {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+.toolbar {
+    color: white;
+    background-color: green;
+}
 
-    
+.toolbar-span {
+    margin: auto;
+}
+
+.grid-list {
+    display: flex;
+    overflow: auto; //Caso tenha muitos cursos, ajuda a ter um scroolbar
+
+
+}
+
+.tile {
+    background: lightblue;
+    border: 20px;
+}
+
+.tile-header{
+
+}
+
+mat-grid-tile-header{
+
+}
+
+.tile-footer{
+
+}
+
+
+
+
+.tile-image {
+    width: 80%;
+    height: 80%
+
 }
