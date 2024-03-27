@@ -7,39 +7,22 @@ import { Observable } from 'rxjs';
 import { Food } from '../../interfaces/FoodResponse';
 import { CommonModule } from '@angular/common';
 
-import {MatCardModule} from '@angular/material/card';
-
-
+import { MatCardModule } from '@angular/material/card';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatGridListModule,
-    CommonModule,
-    MatCardModule
-  ],
+  imports: [MatToolbarModule, MatGridListModule, CommonModule, MatCardModule, CardComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit{
-
-
+export class HomeComponent implements OnInit {
   receitas$: Observable<Food[]> = new Observable<Food[]>();
 
-  constructor(private service: FoodService){
-
-  }
+  constructor(private service: FoodService) {}
 
   ngOnInit(): void {
     this.receitas$ = this.service.fetchData();
-    this.receitas$.forEach((value) => console.log(value))
   }
-
-
-
-
-  
-
 }

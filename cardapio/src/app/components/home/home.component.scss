@@ -9,33 +9,47 @@
 
 .grid-list {
     display: flex;
-    overflow: auto; //Caso tenha muitos cursos, ajuda a ter um scroolbar
+    overflow: hidden; //Caso tenha muitos cursos, ajuda a ter um scroolbar
 
 
 }
 
 .tile {
-    background: lightblue;
+    background: #36768c;
     border: 20px;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 2s;
+    overflow: hidden;
+    cursor: pointer;
+
+
 }
+.tile:hover {
+    border: 1px;
+    background: darkblue;
+  }
 
 .tile-header{
+    text-transform: uppercase;  
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
 
 }
 
 mat-grid-tile-header{
-
+ 
 }
 
 .tile-footer{
 
 }
 
-
-
-
 .tile-image {
-    width: 80%;
-    height: 80%
+    width: 75%;
+    height: 75%;
+    object-fit: fill; 
 
 }

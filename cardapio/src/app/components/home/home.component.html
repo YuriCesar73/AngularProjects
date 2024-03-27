@@ -9,8 +9,19 @@
     <mat-grid-tile class="tile">
         <mat-grid-tile-header class="tile-header">{{food.name}}</mat-grid-tile-header>
         <img class="tile-image" src={{food.image}} alt="">
-        <mat-grid-tile-footer class="tile-footer">Ver receita</mat-grid-tile-footer>
+        <p></p>
+        <!-- <mat-grid-tile-footer class="tile-footer">Ver receita</mat-grid-tile-footer> -->
     </mat-grid-tile>
 }
   </mat-grid-list>
+
+
+
+
+
+
+<!-- 
+  @for(food of receitas$ | async; track food.id){
+    <app-card [food]="food"></app-card>
+  } -->
   
