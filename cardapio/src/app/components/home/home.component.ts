@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FoodService } from '../../services/food.service';
 import { Observable } from 'rxjs';
@@ -13,7 +12,7 @@ import { CardComponent } from '../card/card.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatToolbarModule, MatGridListModule, CommonModule, MatCardModule, CardComponent],
+  imports: [MatGridListModule, CommonModule, MatCardModule, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
