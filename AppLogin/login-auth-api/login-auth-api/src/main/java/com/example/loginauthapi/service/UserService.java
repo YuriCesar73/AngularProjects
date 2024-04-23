@@ -27,7 +27,7 @@ public class UserService {
 	public ResponseDTO login(LoginRequestDTO login) {
 		User user = this.repository.findByEmail(login.email()).orElseThrow(() -> new RuntimeException("User not found"));
 		
-		if(this.passwordEconder.matches(user.getPassword(), login.password())) {
+		if(this.passwordEconder.matches(login.password(), user.getPassword())) {
 			String token = this.tokenService.generateToken(user);
 			return new ResponseDTO(user.getName(), token);
 		}

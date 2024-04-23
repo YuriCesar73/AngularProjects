@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.loginauthapi.dto.LoginRequestDTO;
 import com.example.loginauthapi.dto.RegisterRequestDTO;
+import com.example.loginauthapi.dto.ResponseDTO;
 import com.example.loginauthapi.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -20,12 +21,12 @@ public class AuthController {
 	private final UserService service;
 	
 	@PostMapping("/login")
-	public ResponseEntity login(@RequestBody LoginRequestDTO login) {		
+	public ResponseEntity<ResponseDTO> login(@RequestBody LoginRequestDTO login) {		
 		return ResponseEntity.ok(this.service.login(login));
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity register(@RequestBody RegisterRequestDTO register) {		
+	public ResponseEntity<ResponseDTO> register(@RequestBody RegisterRequestDTO register) {		
 		return ResponseEntity.ok(this.service.register(register));
 	}
 	

@@ -1,0 +1,18 @@
+package com.example.loginauthapi.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+	
+	//Controller criado para testes
+	@GetMapping
+	public ResponseEntity<String> getUser(){
+		return ResponseEntity.ok("Sucesso!");
+	}
+}
