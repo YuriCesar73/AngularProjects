@@ -1,0 +1,1 @@
+export interface Instruction extends Array<string> {}

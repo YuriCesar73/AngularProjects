@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Food } from '../interfaces/FoodResponse';
+import { Recipe } from '../interfaces/Recipe';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FoodService {
+export class RecipeService {
 
 
   readonly API = "https://dummyjson.com/recipes"
 
   constructor(private httpClient: HttpClient) { }
 
-  fetchData(): Observable<Food[]>{
-    return this.httpClient.get<Food[]>(this.API).pipe(map((response: any) => {
-      return response.recipes;
-    }))
+  fetchData(): Observable<Recipe[]>{
+    return this.httpClient.get<Recipe[]>(this.API);
   }
 
 

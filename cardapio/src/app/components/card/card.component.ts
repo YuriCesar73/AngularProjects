@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Food } from '../../interfaces/FoodResponse';
+import { Recipe } from '../../interfaces/Recipe';
 
 @Component({
   selector: 'app-card',
@@ -10,7 +10,7 @@ import { Food } from '../../interfaces/FoodResponse';
 })
 export class CardComponent {
 
-  @Input() food!: Food;
+  @Input() food!: Recipe;
 
   constructor(){
     

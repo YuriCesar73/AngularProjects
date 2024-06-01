@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MatGridListModule } from '@angular/material/grid-list';
-import { FoodService } from '../../services/food.service';
+import { RecipeService } from '../../services/recipe.service';
 import { Observable } from 'rxjs';
-import { Food } from '../../interfaces/FoodResponse';
+import { Recipe } from '../../interfaces/Recipe';
 import { CommonModule } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
@@ -13,15 +13,19 @@ import { CardComponent } from '../card/card.component';
   selector: 'app-home',
   standalone: true,
   imports: [MatGridListModule, CommonModule, MatCardModule, CardComponent],
+  providers: [RecipeService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  receitas$: Observable<Food[]> = new Observable<Food[]>();
 
-  constructor(private service: FoodService) {}
+  recipes: Recipe[] = [];
+
+  constructor(private service: RecipeService) {}
 
   ngOnInit(): void {
-    this.receitas$ = this.service.fetchData();
+    this.service.fetchData().subscribe((data:any) => {
+      this.recipes = data.recipes; 
+    })
   }
 }

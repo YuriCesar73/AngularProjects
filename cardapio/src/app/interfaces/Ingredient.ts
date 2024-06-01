@@ -1,0 +1,1 @@
+export interface Ingredient extends Array<string> {}

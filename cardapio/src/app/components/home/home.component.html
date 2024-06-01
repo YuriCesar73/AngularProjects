@@ -1,13 +1,20 @@
-<mat-grid-list class="grid-list" cols="2" rowHeight="2:1" gutterSize="10px">
+
+
+@for(recipe of recipes; track recipe.id){
+  <p>{{recipe.id}}</p>
+}
+
+
+
+<!-- <mat-grid-list class="grid-list" cols="2" rowHeight="2:1" gutterSize="10px">
 @for(food of receitas$ | async; track food.id){
     <mat-grid-tile class="tile">
         <mat-grid-tile-header class="tile-header">{{food.name}}</mat-grid-tile-header>
         <img class="tile-image" src={{food.image}} alt="">
         <p></p>
-        <!-- <mat-grid-tile-footer class="tile-footer">Ver receita</mat-grid-tile-footer> -->
-    </mat-grid-tile>
-}
-  </mat-grid-list>
+       <mat-grid-tile-footer class="tile-footer">Ver receita</mat-grid-tile-footer> -->
+    <!-- </mat-grid-tile> -->
+  <!-- </mat-grid-list> -->
 
 
 
@@ -18,4 +25,4 @@
   @for(food of receitas$ | async; track food.id){
     <app-card [food]="food"></app-card>
   } -->
-  
+   
