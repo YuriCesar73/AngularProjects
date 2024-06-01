@@ -1,8 +1,12 @@
 
+<div class="card-container">
+  @for(recipe of recipes; track recipe.id){
+    <!-- <p>{{recipe.id}}</p> -->
+    
+      <card [food]="recipe"></card>
+  }
+</div>
 
-@for(recipe of recipes; track recipe.id){
-  <p>{{recipe.id}}</p>
-}
 
 
 

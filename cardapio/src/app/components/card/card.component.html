@@ -1,14 +1,20 @@
 
-    <div class="card">
-        <img src={{food.image}} class="card-img" alt="">
-        <div class="card-body">
-            <div class="card-title">
-                {{food.name}}
-                <p class="card-sub-title"></p>
-                <p class="card-info"></p>
-                <button class="card-bnt">Veja a receitas</button>
-            
-            </div>
-        </div>
-    </div>
-    
+  <mat-card class="my-card">
+    <img mat-card-image src="{{food.image}}">
+    <mat-card-content>
+        <h1> {{food.name}} </h1>
+        <h2> {{food.cookTimeMinutes + food.prepTimeMinutes + "min"}} </h2>
+      <p>
+        {{food.ingredients}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+      </button>
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+

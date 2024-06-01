@@ -1,55 +1,7 @@
-.toolbar {
-    color: white;
-    background-color: green;
-}
-
-.toolbar-span {
-    margin: auto;
-}
-
-.grid-list {
+.card-container {
     display: flex;
-    overflow: hidden; //Caso tenha muitos cursos, ajuda a ter um scroolbar
-
-
-}
-
-.tile {
-    background: #36768c;
-    border: 20px;
-    right: -100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: 2s;
-    overflow: hidden;
-    cursor: pointer;
-
-
-}
-.tile:hover {
-    border: 1px;
-    background: darkblue;
+    flex-wrap: wrap;
+    justify-content: center; /* Opcional: centraliza os cartões horizontalmente */
+    padding: 20px; /* Para garantir algum espaço ao redor dos cartões */
+    gap: 20px; /* Espaçamento entre os cartões */
   }
-
-.tile-header{
-    text-transform: uppercase;  
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-
-}
-
-mat-grid-tile-header{
- 
-}
-
-.tile-footer{
-
-}
-
-.tile-image {
-    width: 75%;
-    height: 75%;
-    object-fit: fill; 
-
-}
