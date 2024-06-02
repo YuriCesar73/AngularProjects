@@ -1,4 +1,3 @@
-
   <mat-card class="my-card">
     <img mat-card-image src="{{food.image}}">
     <mat-card-content>
@@ -9,12 +8,13 @@
       </p>
     </mat-card-content>
     <mat-card-actions class="btn-container">
-      <button mat-button (click)="isFavorite()">
+      <button mat-button (click)="isFavorite(food)">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" color="{{iconColor}}"></mat-icon>
       </button>
       <button mat-button>
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment" color="primary"></mat-icon>
       </button>
     </mat-card-actions>
-  </mat-card>
+  </mat-card>   
+
 
