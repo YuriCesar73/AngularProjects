@@ -5,7 +5,21 @@
     border-radius: 16px;
     background-color: rgb(42, 214, 148);
     // margin: 20px 20px;
-    
+    cursor: pointer;
+  }
+
+.btn-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+button{
+  margin-right: 5px;
+}
+
+
+  p {
+    text-align: justify;
   }
 
 

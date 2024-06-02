@@ -5,15 +5,15 @@
         <h1> {{food.name}} </h1>
         <h2> {{food.cookTimeMinutes + food.prepTimeMinutes + "min"}} </h2>
       <p>
-        {{food.ingredients}}
+        INGREDIENTS: {{food.ingredients}}
       </p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="btn-container">
       <button mat-button>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite" color="primary"></mat-icon>
       </button>
       <button mat-button>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment" color="primary"></mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>
