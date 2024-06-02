@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 
+
 @Component({
   selector: 'card',
   standalone: true,
@@ -16,8 +17,20 @@ export class CardComponent {
 
   @Input() food!: Recipe;
 
-  constructor(){
-    
+  favorite: boolean = false;
+  iconColor: string = 'primary'
+
+
+  isFavorite(){
+    console.log("Cheguei no isFavorite.")
+    if(!this.favorite){
+      this.iconColor = 'warn'
+      this.favorite = !this.favorite;
+    }
+    else {
+      this.iconColor = 'primary'
+      this.favorite = !this.favorite;
+    }
   }
 
 }
