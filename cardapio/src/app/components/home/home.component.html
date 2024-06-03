@@ -1,5 +1,20 @@
-<div class="card-container">
-  @for(recipe of recipes; track recipe.id){
-      <card [food]="recipe" (addFavorite)="addFavoriteRecipe($event)" (removeFavorite)="removeFavoriteRecipe($event)"></card>
-  }
-</div>
+<toolbar (showFavorite)="showFavoriteList()"></toolbar>
+@if(isFavoriteList){
+  <h1>Lista dos favoritos</h1>
+  <div class="card-container">
+    @for(recipe of favoriteRecipes; track recipe.id){
+        <card [food]="recipe" (addFavorite)="addFavoriteRecipe($event)" (removeFavorite)="removeFavoriteRecipe($event)"></card>
+    }
+  </div>
+} @else {
+
+  <div class="card-container">
+    @for(recipe of recipes; track recipe.id){
+        <card [food]="recipe" (addFavorite)="addFavoriteRecipe($event)" (removeFavorite)="removeFavoriteRecipe($event)"></card>
+    }
+  </div>
+}
+
+
+
+

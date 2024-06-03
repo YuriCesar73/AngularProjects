@@ -10,4 +10,5 @@ export interface Recipe {
     rating: number,
     ingredients: Ingredient,
     instructions: Instruction, 
+    isFavorite?: boolean
 }

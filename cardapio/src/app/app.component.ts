@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +13,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     RouterLinkActive, 
     CommonModule, 
     HomeComponent,
-    CardComponent,
-    ToolbarComponent
+    CardComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

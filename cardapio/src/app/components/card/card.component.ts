@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Recipe } from '../../interfaces/Recipe';
+import { Recipe } from './../../interfaces/Recipe';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -13,26 +13,42 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent {
+export class CardComponent implements OnInit, OnChanges{
 
   @Input() food!: Recipe;
   @Output('addFavorite') addFavorite = new EventEmitter<Recipe>();
   @Output('removeFavorite') removeFavorite = new EventEmitter<Recipe>();
-
-  favorite: boolean = false;
   iconColor: string = 'primary'
 
+  ngOnInit(): void {
+    this.setFavorite()
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.setFavorite()
+  }
+
+  private setFavorite(){
+    if(!this.food.isFavorite){
+      this.iconColor = 'warn'
+      this.food.isFavorite = !this.food.isFavorite;
+    }
+    else {
+      this.iconColor = 'primary'
+      this.food.isFavorite = !this.food.isFavorite
+    }
+  }
 
 
   isFavorite(recipe: Recipe){
-    if(!this.favorite){
+    if(!recipe.isFavorite){
       this.iconColor = 'warn'
-      this.favorite = !this.favorite;
+      recipe.isFavorite = !recipe.isFavorite;
       this.addFavorite.emit(recipe);
     }
     else {
       this.iconColor = 'primary'
-      this.favorite = !this.favorite;
+      recipe.isFavorite = !recipe.isFavorite
       this.removeFavorite.emit(recipe);
     }
   }

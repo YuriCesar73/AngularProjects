@@ -1,3 +1,9 @@
 <mat-toolbar color="primary">
     <span class="toolbar-span">Lista de receitas</span>
+    <span class="example-spacer"></span>
+    <button>
+        <!-- <mat-checkbox class="example-margin" color="primary" [(ngModel)]="showFavorite">Mostrar os favoritos</mat-checkbox> -->
+        <mat-checkbox class="example-margin" color="primary" (change)="valueCheckbox()">Mostrar os favoritos</mat-checkbox>
+
+    </button>
 </mat-toolbar>
